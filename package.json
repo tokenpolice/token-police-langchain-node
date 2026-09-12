@@ -1,0 +1,76 @@
+{
+  "name": "token-police-langchain",
+  "version": "1.0.0",
+  "description": "LangChain token-capture companion for the TokenPolice Node.js SDK. Install alongside token-police to enable automatic LangChain instrumentation.",
+  "author": "TokenPolice <hello@tokenpolice.ai>",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "llm",
+    "budget",
+    "enforcement",
+    "token",
+    "langchain",
+    "opentelemetry",
+    "tokenpolice",
+    "firewall",
+    "cost-control",
+    "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tokenpolice/token-police-langchain-node"
+  },
+  "bugs": {
+    "url": "https://github.com/tokenpolice/token-police-langchain-node/issues",
+    "email": "support@tokenpolice.ai"
+  },
+  "homepage": "https://tokenpolice.ai",
+  "dependencies": {
+    "@traceloop/instrumentation-langchain": "~0.27.0"
+  },
+  "peerDependencies": {
+    "token-police": ">=1.0.0",
+    "@langchain/core": ">=0.3.0 <2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@langchain/core": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}
